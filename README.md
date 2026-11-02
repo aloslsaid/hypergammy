@@ -1,7 +1,7 @@
 # hypergammy
 hybergammy web if you under 4 your cooked lil bro
 
-
+put the zip file on lovable and will make the website 
 
 # INFINITY
 
