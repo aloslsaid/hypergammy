@@ -1,6 +1,6 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Activity, ArrowUpRight, CheckCircle2, ChevronDown, CircleAlert, FileImage, Fingerprint, Gauge, ImagePlus, Loader2, ScanFace, ShieldCheck, Sparkles, UploadCloud, X } from 'lucide-react'
-import { Analysis, CategoryResult } from './types'
+import type { Analysis, CategoryResult } from './types'
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 const groups: Record<string,string> = { major_structure:'Facial structure', eyes:'Eyes', nose:'Nose', jaw_chin:'Jaw & chin', mouth:'Mouth & lips', upper_face:'Upper face', skin:'Skin' }
@@ -13,6 +13,10 @@ export default function App() {
   const [result,setResult]=useState<Analysis|null>(null)
   const [expanded,setExpanded]=useState<string|null>(null)
   const [drag,setDrag]=useState(false)
+
+  useEffect(() => () => {
+    if (preview) URL.revokeObjectURL(preview)
+  }, [preview])
 
   const grouped=useMemo(()=> {
     const out:Record<string,CategoryResult[]>={}
@@ -71,9 +75,9 @@ export default function App() {
         <div className="score-grid">
           <div className="score-card">
             <div className="score-card-top"><span>REFERENCE MATCH SCORE</span><span className="score-icon"><Gauge size={17}/></span></div>
-            <div className="score-number">{score===null?'—':score?.toFixed(2)}<small>/ 10</small></div>
-            <div className="score-caption">{score===null?'Not enough valid references':'Experimental similarity to configured references'}</div>
-            <div className="score-track"><span style={{width:`${score===null?0:score*10}%`}}/></div>
+            <div className="score-number">{score == null ? '—' : score.toFixed(2)}<small>/ 10</small></div>
+            <div className="score-caption">{score == null ? 'Not enough valid references' : 'Experimental similarity to configured references'}</div>
+            <div className="score-track"><span style={{width:`${score == null ? 0 : score * 10}%`}}/></div>
           </div>
           <div className="metric-card"><span>ANALYZED CATEGORIES</span><strong>{result.analyzed_categories}<small> / 34</small></strong><p>Categories with a usable reference and measurement</p></div>
           <div className="metric-card"><span>REFERENCE COVERAGE</span><strong>{result.coverage_percent}<small>%</small></strong><p>Configured category weight represented in this result</p></div>
