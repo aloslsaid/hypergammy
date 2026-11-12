@@ -16,5 +16,5 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false
   },
-  "include": ["App.tsx", "main.tsx", "types.ts"]
+  "include": ["App.tsx", "main.tsx", "types.ts", "vite-env.d.ts"]
 }
