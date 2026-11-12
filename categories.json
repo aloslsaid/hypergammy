@@ -1,0 +1,526 @@
+[
+  {
+    "category_id": "overall_facial_harmony",
+    "display_name": "Overall Facial Harmony",
+    "description": "Composite balance of measurable facial proportions.",
+    "group_id": "major_structure",
+    "required_features": [
+      "face_width",
+      "face_height",
+      "eye_spacing",
+      "nose_width",
+      "mouth_width"
+    ],
+    "comparison_method": "composite_ratio",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/overall_facial_harmony/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "facial_symmetry",
+    "display_name": "Facial Symmetry",
+    "description": "Left-right landmark symmetry around the facial midline.",
+    "group_id": "major_structure",
+    "required_features": [
+      "symmetry_profile"
+    ],
+    "comparison_method": "landmark_symmetry",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/facial_symmetry/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "facial_proportions",
+    "display_name": "Facial Proportions",
+    "description": "Normalized facial width and height relationships.",
+    "group_id": "major_structure",
+    "required_features": [
+      "face_width",
+      "face_height",
+      "face_ratio"
+    ],
+    "comparison_method": "ratio_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/facial_proportions/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "jawline_definition",
+    "display_name": "Jawline Definition",
+    "description": "Visible lower-face contour shape; sensitive to pose and facial hair.",
+    "group_id": "jaw_chin",
+    "required_features": [
+      "jaw_width",
+      "chin_width",
+      "lower_face_height"
+    ],
+    "comparison_method": "contour_ratio",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/jawline_definition/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "jaw_width_and_shape",
+    "display_name": "Jaw Width and Shape",
+    "description": "Width of the lower jaw relative to cheek width.",
+    "group_id": "jaw_chin",
+    "required_features": [
+      "jaw_width",
+      "cheek_width"
+    ],
+    "comparison_method": "ratio_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/jaw_width_and_shape/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "chin_projection",
+    "display_name": "Chin Projection",
+    "description": "Forward projection requires a calibrated side/profile view.",
+    "group_id": "jaw_chin",
+    "required_features": [
+      "profile_chin_projection"
+    ],
+    "comparison_method": "profile_geometry",
+    "expected_view": "profile",
+    "initial_status": "unavailable",
+    "reference_path": "reference_images/chin_projection/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "chin_shape",
+    "display_name": "Chin Shape",
+    "description": "Visible chin width and vertical proportions.",
+    "group_id": "jaw_chin",
+    "required_features": [
+      "chin_width",
+      "chin_height"
+    ],
+    "comparison_method": "ratio_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/chin_shape/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "cheekbone_prominence",
+    "display_name": "Cheekbone Prominence",
+    "description": "Approximate cheek-region width; not a direct 3D prominence estimate.",
+    "group_id": "major_structure",
+    "required_features": [
+      "cheek_width",
+      "face_width"
+    ],
+    "comparison_method": "ratio_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/cheekbone_prominence/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "midface_proportions",
+    "display_name": "Midface Proportions",
+    "description": "Vertical distance between eye line, nose base, and mouth line.",
+    "group_id": "major_structure",
+    "required_features": [
+      "midface_height",
+      "face_height"
+    ],
+    "comparison_method": "ratio_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/midface_proportions/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "facial_width_to_height_ratio",
+    "display_name": "Facial Width-to-Height Ratio",
+    "description": "Face width relative to upper-face-to-chin height.",
+    "group_id": "major_structure",
+    "required_features": [
+      "face_ratio"
+    ],
+    "comparison_method": "ratio_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/facial_width_to_height_ratio/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "facial_thirds",
+    "display_name": "Facial Thirds",
+    "description": "Relative heights of upper, middle, and lower facial thirds.",
+    "group_id": "major_structure",
+    "required_features": [
+      "thirds"
+    ],
+    "comparison_method": "vector_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/facial_thirds/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "overall_facial_structure",
+    "display_name": "Overall Facial Structure",
+    "description": "Composite of visible facial width, height, and lower-face ratios.",
+    "group_id": "major_structure",
+    "required_features": [
+      "structure_vector"
+    ],
+    "comparison_method": "vector_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/overall_facial_structure/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "eye_shape",
+    "display_name": "Eye Shape",
+    "description": "Normalized eye aperture and width-to-height ratios.",
+    "group_id": "eyes",
+    "required_features": [
+      "eye_shape_left",
+      "eye_shape_right"
+    ],
+    "comparison_method": "vector_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/eye_shape/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "eye_spacing",
+    "display_name": "Eye Spacing",
+    "description": "Distance between inner eye corners relative to eye width.",
+    "group_id": "eyes",
+    "required_features": [
+      "eye_spacing"
+    ],
+    "comparison_method": "ratio_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/eye_spacing/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "eye_size_and_proportions",
+    "display_name": "Eye Size and Proportions",
+    "description": "Eye width and aperture relative to face width.",
+    "group_id": "eyes",
+    "required_features": [
+      "eye_size"
+    ],
+    "comparison_method": "vector_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/eye_size_and_proportions/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "eye_tilt",
+    "display_name": "Eye Tilt",
+    "description": "Angle of each eye's inner-to-outer corner line.",
+    "group_id": "eyes",
+    "required_features": [
+      "eye_tilt"
+    ],
+    "comparison_method": "angle_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/eye_tilt/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "eye_symmetry",
+    "display_name": "Eye Symmetry",
+    "description": "Difference between left and right eye dimensions.",
+    "group_id": "eyes",
+    "required_features": [
+      "eye_symmetry"
+    ],
+    "comparison_method": "ratio_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/eye_symmetry/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "eyebrow_position_relative_to_eyes",
+    "display_name": "Eyebrow Position Relative to Eyes",
+    "description": "Approximate brow-to-eye vertical spacing.",
+    "group_id": "eyes",
+    "required_features": [
+      "brow_eye_gap"
+    ],
+    "comparison_method": "ratio_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/eyebrow_position_relative_to_eyes/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "nose_length",
+    "display_name": "Nose Length",
+    "description": "Nose bridge-to-base length relative to face height.",
+    "group_id": "nose",
+    "required_features": [
+      "nose_length"
+    ],
+    "comparison_method": "ratio_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/nose_length/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "nose_width",
+    "display_name": "Nose Width",
+    "description": "Alar width relative to face width.",
+    "group_id": "nose",
+    "required_features": [
+      "nose_width"
+    ],
+    "comparison_method": "ratio_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/nose_width/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "nose_bridge_shape",
+    "display_name": "Nose Bridge Shape",
+    "description": "2D bridge alignment and width profile.",
+    "group_id": "nose",
+    "required_features": [
+      "nose_bridge"
+    ],
+    "comparison_method": "vector_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/nose_bridge_shape/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "nose_tip_shape",
+    "display_name": "Nose Tip Shape",
+    "description": "Limited 2D tip-region geometry; not a 3D projection measure.",
+    "group_id": "nose",
+    "required_features": [
+      "nose_tip"
+    ],
+    "comparison_method": "vector_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/nose_tip_shape/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "nose_to_face_proportion",
+    "display_name": "Nose-to-Face Proportion",
+    "description": "Nose width and length relative to facial dimensions.",
+    "group_id": "nose",
+    "required_features": [
+      "nose_width",
+      "nose_length"
+    ],
+    "comparison_method": "vector_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/nose_to_face_proportion/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "lip_proportions",
+    "display_name": "Lip Proportions",
+    "description": "Mouth width and total lip aperture/height relationships.",
+    "group_id": "mouth",
+    "required_features": [
+      "lip_proportions"
+    ],
+    "comparison_method": "vector_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/lip_proportions/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "upper_to_lower_lip_ratio",
+    "display_name": "Upper-to-Lower Lip Ratio",
+    "description": "Upper and lower lip vermilion height ratio (approximate).",
+    "group_id": "mouth",
+    "required_features": [
+      "lip_ratio"
+    ],
+    "comparison_method": "ratio_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/upper_to_lower_lip_ratio/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "mouth_width",
+    "display_name": "Mouth Width",
+    "description": "Mouth width relative to facial width.",
+    "group_id": "mouth",
+    "required_features": [
+      "mouth_width"
+    ],
+    "comparison_method": "ratio_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/mouth_width/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "mouth_symmetry",
+    "display_name": "Mouth Symmetry",
+    "description": "Left-right mouth corner height difference.",
+    "group_id": "mouth",
+    "required_features": [
+      "mouth_symmetry"
+    ],
+    "comparison_method": "ratio_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/mouth_symmetry/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "forehead_proportions",
+    "display_name": "Forehead Proportions",
+    "description": "Visible brow-to-hairline height; hairline may be occluded.",
+    "group_id": "upper_face",
+    "required_features": [
+      "forehead_height"
+    ],
+    "comparison_method": "ratio_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/forehead_proportions/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "eyebrow_shape",
+    "display_name": "Eyebrow Shape",
+    "description": "Approximate brow contour using landmark positions.",
+    "group_id": "upper_face",
+    "required_features": [
+      "brow_shape"
+    ],
+    "comparison_method": "vector_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/eyebrow_shape/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "eyebrow_density_and_structure",
+    "display_name": "Eyebrow Density and Structure",
+    "description": "Image appearance feature; not reliably measurable with landmarks alone.",
+    "group_id": "upper_face",
+    "required_features": [
+      "brow_density"
+    ],
+    "comparison_method": "visual_feature",
+    "expected_view": "frontal",
+    "initial_status": "unavailable",
+    "reference_path": "reference_images/eyebrow_density_and_structure/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "ear_proportions",
+    "display_name": "Ear Proportions",
+    "description": "Ear visibility and dimensions; often occluded in frontal photos.",
+    "group_id": "upper_face",
+    "required_features": [
+      "ear_proportions"
+    ],
+    "comparison_method": "visual_feature",
+    "expected_view": "frontal",
+    "initial_status": "unavailable",
+    "reference_path": "reference_images/ear_proportions/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "skin_appearance",
+    "display_name": "Skin Appearance",
+    "description": "Image appearance only; strongly affected by lighting, camera, and filters.",
+    "group_id": "skin",
+    "required_features": [
+      "skin_texture"
+    ],
+    "comparison_method": "visual_feature",
+    "expected_view": "frontal",
+    "initial_status": "unavailable",
+    "reference_path": "reference_images/skin_appearance/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "facial_feature_alignment",
+    "display_name": "Facial Feature Alignment",
+    "description": "Alignment of eye, nose, and mouth centers.",
+    "group_id": "major_structure",
+    "required_features": [
+      "alignment"
+    ],
+    "comparison_method": "vector_distance",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/facial_feature_alignment/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  },
+  {
+    "category_id": "overall_feature_balance",
+    "display_name": "Overall Feature Balance",
+    "description": "Composite of normalized eye, nose, and mouth proportions.",
+    "group_id": "major_structure",
+    "required_features": [
+      "balance"
+    ],
+    "comparison_method": "composite_ratio",
+    "expected_view": "frontal",
+    "initial_status": "experimental",
+    "reference_path": "reference_images/overall_feature_balance/reference.jpg",
+    "score_scale": 0.12,
+    "minimum_confidence": 0.25
+  }
+]

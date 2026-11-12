@@ -1,0 +1,12 @@
+{
+  "groups": {
+    "major_structure": 0.45,
+    "eyes": 0.2,
+    "nose": 0.12,
+    "jaw_chin": 0.1,
+    "mouth": 0.05,
+    "upper_face": 0.05,
+    "skin": 0.03
+  },
+  "description": "Product defaults only; not scientifically validated."
+}

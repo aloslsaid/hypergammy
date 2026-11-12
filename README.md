@@ -1,33 +1,30 @@
-# hypergammy
-hybergammy web if you under 4 your cooked lil bro
+# INFINITY Backend
 
-put the zip file on lovable and will make the website 
+## Requirements
+Use Python 3.10 or 3.11. MediaPipe wheels may not be available for every Python version/platform.
 
-# INFINITY
+## Windows setup
+```powershell
+cd backend
+py -3.11 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+```
 
-INFINITY is an AI-powered facial analysis system designed to analyze facial features using computer vision and mathematical measurements.
+API docs: http://127.0.0.1:8000/docs
 
-### Features
+## References
+Each category needs its own reference image. The UI/backend do not invent references. Add a JPG using:
+`PUT /references/{category_id}` with multipart field `file`, or place `reference.jpg` and `metadata.json` in `reference_images/{category_id}/`.
 
-- 34 facial analysis categories.
-- Facial landmark detection.
-- Individual feature scoring.
-- Reference-based comparison.
-- Overall facial harmony score.
-- Interactive web interface.
+Only use images you own or have permission to use. The current comparison is experimental and not scientifically calibrated.
 
-### Tech Stack
+## Tests
+```powershell
+$env:PYTHONPATH="."
+pytest -q
+```
 
-- Python
-- FastAPI
-- OpenCV
-- MediaPipe
-- React
-- TypeScript
-- Vite
-
-### Project Status
-
-Currently under development.
-
-INFINITY — Detailed facial analysis through AI and computer vision.
+The API returns no score when a reference is missing or the required feature is not supported.
