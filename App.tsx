@@ -75,9 +75,9 @@ export default function App() {
         <div className="score-grid">
           <div className="score-card">
             <div className="score-card-top"><span>REFERENCE MATCH SCORE</span><span className="score-icon"><Gauge size={17}/></span></div>
-            <div className="score-number">{score===null?'—':score?.toFixed(2)}<small>/ 10</small></div>
-            <div className="score-caption">{score===null?'Not enough valid references':'Experimental similarity to configured references'}</div>
-            <div className="score-track"><span style={{width:`${score===null?0:score*10}%`}}/></div>
+            <div className="score-number">{score == null ? '—' : score.toFixed(2)}<small>/ 10</small></div>
+            <div className="score-caption">{score == null ? 'Not enough valid references' : 'Experimental similarity to configured references'}</div>
+            <div className="score-track"><span style={{width:`${score == null ? 0 : score * 10}%`}}/></div>
           </div>
           <div className="metric-card"><span>ANALYZED CATEGORIES</span><strong>{result.analyzed_categories}<small> / 34</small></strong><p>Categories with a usable reference and measurement</p></div>
           <div className="metric-card"><span>REFERENCE COVERAGE</span><strong>{result.coverage_percent}<small>%</small></strong><p>Configured category weight represented in this result</p></div>
