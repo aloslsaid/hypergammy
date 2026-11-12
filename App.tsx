@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Activity, ArrowUpRight, CheckCircle2, ChevronDown, CircleAlert, FileImage, Fingerprint, Gauge, ImagePlus, Loader2, ScanFace, ShieldCheck, Sparkles, UploadCloud, X } from 'lucide-react'
 import type { Analysis, CategoryResult } from './types'
 
@@ -13,6 +13,10 @@ export default function App() {
   const [result,setResult]=useState<Analysis|null>(null)
   const [expanded,setExpanded]=useState<string|null>(null)
   const [drag,setDrag]=useState(false)
+
+  useEffect(() => () => {
+    if (preview) URL.revokeObjectURL(preview)
+  }, [preview])
 
   const grouped=useMemo(()=> {
     const out:Record<string,CategoryResult[]>={}
