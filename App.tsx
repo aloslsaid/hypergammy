@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Activity, ArrowUpRight, CheckCircle2, ChevronDown, CircleAlert, FileImage, Fingerprint, Gauge, ImagePlus, Loader2, ScanFace, ShieldCheck, Sparkles, UploadCloud, X } from 'lucide-react'
-import { Analysis, CategoryResult } from './types'
+import type { Analysis, CategoryResult } from './types'
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
 const groups: Record<string,string> = { major_structure:'Facial structure', eyes:'Eyes', nose:'Nose', jaw_chin:'Jaw & chin', mouth:'Mouth & lips', upper_face:'Upper face', skin:'Skin' }
