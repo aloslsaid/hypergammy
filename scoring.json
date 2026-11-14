@@ -1,8 +1,0 @@
-{
-  "default_score_scale": 0.12,
-  "minimum_overall_confidence": 0.25,
-  "maximum_upload_mb": 10,
-  "allowed_extensions": [".jpg", ".jpeg", ".png", ".webp"],
-  "score_label": "Reference Match Score",
-  "calibration_status": "experimental_unvalidated"
-}
